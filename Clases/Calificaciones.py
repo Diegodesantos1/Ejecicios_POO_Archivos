@@ -1,6 +1,7 @@
 import csv
 import pandas as pd
 from colorama import Fore, Style
+import re
 class Calificaciones_estudiantes:
     def __init__(self, lista_de_listas, tabla, diccionario):
         self.lista_de_listas = lista_de_listas
@@ -31,7 +32,9 @@ class Calificaciones_estudiantes:
         for i in range (len(lista_de_listas)):
             n=+1
             lista_inicial=lista_de_listas.pop(n)
-            parcial1= float(lista_inicial.pop(3)) ; parcial2 = float(lista_inicial.pop(4)) ; final = float(lista_inicial.pop(7))
+
+            parcial1= (lista_inicial.pop(3)) ; parcial2 = (lista_inicial.pop(3)) ; final = (lista_inicial.pop(5))
+            float(parcial1) ; float(parcial2) ; float(final)
             nota_final = ((parcial1 + parcial2) * 0.6) + (final * 0.4)
             lista_final = lista_inicial.append(nota_final)
             print(lista_final)
