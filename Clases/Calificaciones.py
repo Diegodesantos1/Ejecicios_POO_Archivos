@@ -47,16 +47,16 @@ class Calificaciones_estudiantes:
             parcial1 = float(parcial1) ; parcial2 = float(parcial2) ; practicas = float(practicas)
             nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4)
             nota_final =round(nota_final)
-        if asistencia > "75%" and nota_final >= 5 and practicas >= 4:
-            nombre = lista_inicial.pop(1)
-            apellidos = lista_inicial.pop(0)
             print("Han aprobado los siguientes alumnos:\n")
-            print(f"{nombre}, {apellidos}")
-        else:
-            nombre = lista_inicial.pop(1)
-            apellidos = lista_inicial.pop(0)
-            print("Han suspendido los siguientes alumnos:\n")
-            print(f"{nombre}, {apellidos}")
+            if asistencia > "75%" and nota_final >= 5 and practicas >= 4:
+                nombre = lista_inicial.pop(1)
+                apellidos = lista_inicial.pop(0)
+                print(f"{nombre}, {apellidos}")
+            else:
+                nombre = lista_inicial.pop(1)
+                apellidos = lista_inicial.pop(0)
+                print("Han suspendido los siguientes alumnos:\n")
+                print(f"{nombre}, {apellidos}")
 
 
 def elegir_subejercicio():
