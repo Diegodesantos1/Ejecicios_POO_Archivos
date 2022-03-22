@@ -6,9 +6,8 @@ class Calificaciones_estudiantes:
         self.lista_de_listas = lista_de_listas
         self.tabla = tabla
         self.diccionario= diccionario
-    def recibir_diccionario():
+    def recibir_diccionario(): #APARTADO 1
         visualizar = int(input((Fore.GREEN +"¿Qué quieres visualizar?" + Fore.BLUE + "\n --> 1: Tabla de datos\n --> 2: Diccionario de datos\n --> 3: Lista de datos\n"))) ; print(Style.RESET_ALL, end="")
-        
         if visualizar == 1:
             tabla = pd.read_csv('calificaciones.csv', on_bad_lines='skip', encoding = "UTF8", sep=";")
             print(f"{tabla}\n\n\n")
