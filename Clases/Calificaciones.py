@@ -65,10 +65,11 @@ class Calificaciones_estudiantes:
         print(Fore.WHITE + "\nLos alumnos que han suspendido son:\n")
         for x in suspensos:
             print(Fore.RED + x)
+        elegir_subejercicio()
 
 
 def elegir_subejercicio():
-    print (Fore.LIGHTMAGENTA_EX + "¿Qué enunciado quieres ejecutar?(1-3) o 4 para terminar el programa\n") ; print(Style.RESET_ALL, end="")
+    print (Fore.LIGHTMAGENTA_EX + "\n¿Qué enunciado quieres ejecutar?(1-3) o 4 para terminar el programa\n") ; print(Style.RESET_ALL, end="")
     enunciado=int(input())
     if enunciado == 1:
         Calificaciones_estudiantes.recibir_diccionario()
