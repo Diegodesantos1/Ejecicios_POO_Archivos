@@ -11,10 +11,10 @@ class Calificaciones_estudiantes:
         if visualizar == 1:
             tabla = pd.read_csv('calificaciones.csv', on_bad_lines='skip', encoding = "UTF8", sep=";")
             print(f"{tabla}\n\n\n")
-        if visualizar == 2:
+        elif visualizar == 2:
             diccionario = pd.read_csv('calificaciones.csv', on_bad_lines='skip', encoding = "UTF8", sep=';').to_dict()
             print(f"{diccionario}\n\n\n")
-        if visualizar == 3:
+        elif visualizar == 3:
             with open('calificaciones.csv', 'r', encoding="utf-8") as f:
                 reader=csv.reader(f, delimiter=';')
                 lista_de_listas = list(reader)
@@ -22,5 +22,17 @@ class Calificaciones_estudiantes:
         else:
             print(Fore.RED + "No válido")
             Calificaciones_estudiantes.recibir_diccionario()
-
-Calificaciones_estudiantes.recibir_diccionario()
+    def nota_final(): #Apartado 2
+        with open('calificaciones.csv', 'r', encoding="utf-8") as f:
+                reader=csv.reader(f, delimiter=';')
+                lista_de_listas = list(reader)
+                print(lista_de_listas)
+        n = 0
+        for i in range (len(lista_de_listas)):
+            n=+1
+            lista_inicial=lista_de_listas.pop(n)
+            parcial1= float(lista_inicial.pop(3)) ; parcial2 = float(lista_inicial.pop(4)) ; final = float(lista_inicial.pop(7))
+            nota_final = ((parcial1 + parcial2) * 0.6) + (final * 0.4)
+            lista_final = lista_inicial.append(nota_final)
+            print(lista_final)
+Calificaciones_estudiantes.nota_final()
