@@ -5,5 +5,4 @@ def eleccion_ejercicio():
         from Clases import Calificaciones
     else:
         eleccion_ejercicio()
-
 eleccion_ejercicio()
