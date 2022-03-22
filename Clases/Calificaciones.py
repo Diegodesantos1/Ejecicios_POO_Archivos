@@ -31,7 +31,8 @@ class Calificaciones_estudiantes:
             parcial1= (lista_inicial.pop(3)) ; parcial2 = (lista_inicial.pop(3)) ; final = (lista_inicial.pop(5))
             parcial1 = float(parcial1) ; parcial2 = float(parcial2) ; final = float(final)
             nota_final = ((((parcial1) + (parcial2)) * 0.6) + ((final) * 0.4))
-            round(nota_final)
+            lista_inicial.insert(3,parcial1) ; lista_inicial.insert(3,parcial2) ; lista_inicial.insert(5,final)
+            nota_final =round(nota_final)
             lista_inicial.append(nota_final)
             n=+1
             print(lista_inicial)
