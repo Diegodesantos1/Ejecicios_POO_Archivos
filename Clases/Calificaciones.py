@@ -1,8 +1,10 @@
 import csv
 import pandas as pd
 class Calificaciones_estudiantes:
-    def __init__(self, lista):
-        self.lista = lista
+    def __init__(self, lista_de_listas, tabla, diccionario):
+        self.lista_de_listas = lista_de_listas
+        self.tabla = tabla
+        self.diccionario= diccionario
     def recibir_diccionario():
         tabla = pd.read_csv('calificaciones.csv', on_bad_lines='skip', encoding = "UTF8", sep=";")
         print(f"{tabla}\n\n\n")
