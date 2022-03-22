@@ -12,14 +12,17 @@ class Calificaciones_estudiantes:
         if visualizar == 1:
             tabla = pd.read_csv("calificaciones.csv", on_bad_lines="skip", encoding = "UTF8", sep=";")
             print(f"{tabla}\n\n\n")
+            elegir_subejercicio()
         elif visualizar == 2:
             diccionario = pd.read_csv("calificaciones.csv", on_bad_lines="skip", encoding = "UTF8", sep=";").to_dict()
             print(f"{diccionario}\n\n\n")
+            elegir_subejercicio()
         elif visualizar == 3:
             with open("calificaciones.csv", "r") as f:
                 reader=csv.reader(f, delimiter=";")
                 lista_de_listas = list(reader)
                 print(lista_de_listas)
+                elegir_subejercicio()
         else:
             print(Fore.RED + "No válido")
             Calificaciones_estudiantes.recibir_diccionario()
@@ -34,7 +37,18 @@ class Calificaciones_estudiantes:
             lista_inicial.insert(3,parcial1) ; lista_inicial.insert(3,parcial2) ; lista_inicial.insert(5,final)
             nota_final =round(nota_final)
             lista_inicial.append(nota_final)
-            i=+1
             print(lista_inicial)
 
-Calificaciones_estudiantes.nota_final()
+def elegir_subejercicio():
+    enunciado=int(input((Fore.LIGHTMAGENTA_EX + "¿Qué enunciado quieres ejecutar?(1-3) o 4 para terminar el programa\n"))) ; print(Style.RESET_ALL, end="")
+    if enunciado == 1:
+        Calificaciones_estudiantes.recibir_diccionario()
+    elif enunciado == 2:
+        Calificaciones_estudiantes.nota_final()
+    elif enunciado == 3:
+        pass
+    elif enunciado == 4:
+        exit()
+    else:
+        elegir_subejercicio()
+elegir_subejercicio()
