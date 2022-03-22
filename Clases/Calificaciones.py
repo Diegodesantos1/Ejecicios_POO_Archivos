@@ -52,12 +52,19 @@ class Calificaciones_estudiantes:
             if asistencia > "75%" and nota_final >= 5 and practicas >= 4:
                 nombre = lista_inicial.pop(1)
                 apellidos = lista_inicial.pop(0)
-                aprobados
+                alumno=f"{nombre} {apellidos}"
+                aprobados.append(alumno)
             else:
                 nombre = lista_inicial.pop(1)
                 apellidos = lista_inicial.pop(0)
-                print("Han suspendido los siguientes alumnos:\n")
-                print(f"{nombre}, {apellidos}")
+                alumno=f"{nombre} {apellidos}"
+                suspensos.append(alumno)
+        print(f"Los alumnos que han aprobado son:\n")
+        for x in aprobados:
+            print(Fore.GREEN + x)
+        print(Fore.WHITE + "\nLos alumnos que han suspendido son:\n")
+        for x in suspensos:
+            print(Fore.RED + x)
 
 
 def elegir_subejercicio():
