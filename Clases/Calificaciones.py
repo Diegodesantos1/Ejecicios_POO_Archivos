@@ -19,5 +19,8 @@ class Calificaciones_estudiantes:
                 reader=csv.reader(f, delimiter=';')
                 lista_de_listas = list(reader)
                 print(lista_de_listas)
+        else:
+            print(Fore.RED + "No válido")
+            Calificaciones_estudiantes.recibir_diccionario()
 
 Calificaciones_estudiantes.recibir_diccionario()
