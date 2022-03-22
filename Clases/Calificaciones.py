@@ -53,7 +53,10 @@ class Calificaciones_estudiantes:
             print("Han aprobado los siguientes alumnos:\n")
             print(f"{nombre}, {apellidos}")
         else:
-            pass
+            nombre = lista_inicial.pop(1)
+            apellidos = lista_inicial.pop(0)
+            print("Han suspendido los siguientes alumnos:\n")
+            print(f"{nombre}, {apellidos}")
 
 
 def elegir_subejercicio():
