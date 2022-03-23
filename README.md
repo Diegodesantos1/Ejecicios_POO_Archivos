@@ -112,6 +112,7 @@ elegir_subejercicio()
 ```
 Su UML es el siguiente:
 
+![image](https://user-images.githubusercontent.com/91721855/159691021-7f2c9976-b75a-4826-b3ac-91da70d05f05.png)
 
-En formato [XML]()
+En formato [XML](https://github.com/Diegodesantos1/Ejecicios_POO_Archivos/blob/main/UML/Calificaciones.drawio)
 
