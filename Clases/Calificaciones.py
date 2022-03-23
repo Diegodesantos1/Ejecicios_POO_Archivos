@@ -18,8 +18,8 @@ class Calificaciones_estudiantes:
             print(f"{diccionario}\n")
             elegir_subejercicio()
         elif visualizar == 3:
-            with open("calificaciones.csv", "r") as f:
-                reader=csv.reader(f, delimiter=";")
+            with open('calificaciones.csv', 'r', encoding="utf-8") as f:
+                reader=csv.reader(f, delimiter=';')
                 lista_de_listas = list(reader)
                 print(f"{lista_de_listas}\n")
                 elegir_subejercicio()
