@@ -4,7 +4,7 @@
 
 ---
 
-En este [repositorio](https://github.com/Diegodesantos1/Ejercicios_POO_Archivos) queda resuelto el ejercicios de herencias en Python. Para llevar a cabo el proyecto nos hemos documentado a través de la teoría que se encuentra en el campus virtual y de otros medios.
+En este [repositorio](https://github.com/Diegodesantos1/Ejercicios_POO_Archivos) queda resuelto el ejercicios de archivos en Python. Para llevar a cabo el proyecto me he documentado a través de la teoría que se encuentra en el campus virtual y de otros medios.
 
 ***
 
@@ -13,7 +13,7 @@ En este [repositorio](https://github.com/Diegodesantos1/Ejercicios_POO_Archivos)
 
 ***
 
-## Ejercicio A: Calificaciones<a name="id1"></a>
+## Ejercicio 1: Calificaciones<a name="id1"></a>
 
 El fichero calificaciones.csv contiene las calificaciones de un curso. Durante el curso se realizaron dos exámenes parciales de teoría y un examen de prácticas. Los alumnos que tuvieron menos de 4 en alguno de estos exámenes pudieron repetirlo en la al final del curso (convocatoria ordinaria). Escribir un programa que contenga las siguientes funciones:
 
