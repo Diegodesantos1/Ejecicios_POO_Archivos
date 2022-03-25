@@ -14,13 +14,18 @@ class Calificaciones_estudiantes:
             print(f"{tabla}\n")
             elegir_subejercicio()
         elif visualizar == 2:
-            diccionario={} ; dic_apellidos={} ; dic_nombre = {}
+            diccionario={}
             datos = pd.read_csv('calificaciones.csv', header=0 , sep =";")
-            lista_apellidos = list(datos['Apellidos']) ; (datos["Nombre"])
+            lista_apellidos = list(datos['Apellidos']) ; lista_nombre = list(datos["Nombre"]) ; lista_asistencia = list(datos["Asistencia"])
+            lista_parcial1 = list(datos["Parcial1"]) ; lista_parcial2 = list(datos["Parcial2"]) ; lista_ordinario1 = list(datos["Ordinario1"])
+            lista_ordinario2 = list(datos["Ordinario2"]) ; lista_practicas = list(datos["Practicas"]) ; lista_ordinariopracticas = list(datos["OrdinarioPracticas"])
             for i in range (16):
-                apellido=lista_apellidos.pop(0)
-                diccionario["Apellido"] = apellido
-                diccionario["Nombre"] = nombre
+                apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
+                parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
+                ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
+                diccionario["Apellido"] = apellido ; diccionario["Nombre"] = nombre ; diccionario["Asistencia"] = asistencia
+                diccionario["Parcial1"] = parcial1 ; diccionario["Parcial2"] = parcial2 ; diccionario["Ordinario1"] = ordinario1
+                diccionario["Ordinario2"] = ordinario2 ; diccionario["Practicas"] = practicas ; diccionario["OrdinarioPracticas"] = ordinariopracticas
                 print(diccionario)
 
             elegir_subejercicio()
