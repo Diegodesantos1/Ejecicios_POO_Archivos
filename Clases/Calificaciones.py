@@ -45,7 +45,7 @@ class Calificaciones_estudiantes:
             apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
             parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
             ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
-            nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4)
+            nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4) ; nota_final = round(nota_final, 2)
             diccionario[i]={"Apellido": apellido,"Nombre": nombre,"Asistencia": asistencia,"Parcial 1": parcial1,"Parcial 2": parcial2,"Ordinario 1": ordinario1,"Ordinario 2": ordinario2,"Practicas": practicas,"Ordinario Practicas": ordinariopracticas, "Nota final": nota_final}
         print(f"\nLos datos añadida la nota final son : \n\n\n{diccionario}")
         elegir_subejercicio()
@@ -57,12 +57,12 @@ class Calificaciones_estudiantes:
         for i in range (16):
             apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
             parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; practicas = lista_practicas.pop(0)
-            nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4)
+            nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4) ; nota_final = round(nota_final, 2)
             if asistencia >= "0.75" and nota_final >= 5 and practicas >= 4:
-                alumno=f"{nombre} {apellido} ,{nota_final}"
+                alumno=f"{nombre} {apellido} y su nota es {nota_final}"
                 aprobados.append(alumno)
             else:
-                alumno=f"{nombre} {apellido} , {nota_final}"
+                alumno=f"{nombre} {apellido} y su nota es {nota_final}"
                 suspensos.append(alumno)
         print(f"\nLos alumnos que han aprobado son:\n")
         for x in aprobados:
