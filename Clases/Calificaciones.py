@@ -30,6 +30,7 @@ class Calificaciones_estudiantes:
             with open("calificaciones.csv", "r", encoding="utf-8") as f:
                 reader=csv.reader(f, delimiter=";")
                 lista_de_listas = list(reader)
+                lista_de_listas.pop(0)
                 print(f"{lista_de_listas}\n")
                 elegir_subejercicio()
         else:
