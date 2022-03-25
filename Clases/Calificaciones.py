@@ -53,18 +53,16 @@ class Calificaciones_estudiantes:
         aprobados = [] ; suspensos = []
         datos = pd.read_csv("calificaciones.csv", header=0 , sep =";")
         lista_apellidos = list(datos["Apellidos"]) ; lista_nombre = list(datos["Nombre"]) ; lista_asistencia = list(datos["Asistencia"])
-        lista_parcial1 = list(datos["Parcial1"]) ; lista_parcial2 = list(datos["Parcial2"]) ; lista_ordinario1 = list(datos["Ordinario1"])
-        lista_ordinario2 = list(datos["Ordinario2"]) ; lista_practicas = list(datos["Practicas"]) ; lista_ordinariopracticas = list(datos["OrdinarioPracticas"])
+        lista_parcial1 = list(datos["Parcial1"]) ; lista_parcial2 = list(datos["Parcial2"]) ; lista_practicas = list(datos["Practicas"])
         for i in range (16):
             apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
-            parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
-            ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
+            parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; practicas = lista_practicas.pop(0)
             nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4)
             if asistencia >= "0.75" and nota_final >= 5 and practicas >= 4:
-                alumno=f"{nombre} {apellido}"
+                alumno=f"{nombre} {apellido} ,{nota_final}"
                 aprobados.append(alumno)
             else:
-                alumno=f"{nombre} {apellido}"
+                alumno=f"{nombre} {apellido} , {nota_final}"
                 suspensos.append(alumno)
         print(f"\nLos alumnos que han aprobado son:\n")
         for x in aprobados:
