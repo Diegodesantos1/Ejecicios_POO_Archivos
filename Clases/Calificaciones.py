@@ -74,7 +74,7 @@ class Calificaciones_estudiantes:
 
 
 def elegir_subejercicio():
-    print (Fore.LIGHTMAGENTA_EX + "\n¿Qué enunciado quieres ejecutar?(1-3) o 4 para terminar el programa\n") ; print(Style.RESET_ALL, end="")
+    print (Fore.LIGHTMAGENTA_EX + "\n\n¿Qué enunciado quieres ejecutar? \n --> 1: Visualizar los datos\n --> 2: Diccionario con notas finales\n --> 3: Aprobados/suspensos\n --> 4: Finalizar el programa\n") ; print(Style.RESET_ALL, end="")
     enunciado=int(input())
     if enunciado == 1:
         Calificaciones_estudiantes.recibir_datos()
