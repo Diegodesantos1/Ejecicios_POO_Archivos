@@ -14,8 +14,15 @@ class Calificaciones_estudiantes:
             print(f"{tabla}\n")
             elegir_subejercicio()
         elif visualizar == 2:
+            diccionario={} ; dic_apellidos={} ; dic_nombre = {}
             datos = pd.read_csv('calificaciones.csv', header=0 , sep =";")
-            print (datos['Apellidos'])
+            lista_apellidos = list(datos['Apellidos']) ; (datos["Nombre"])
+            for i in range (16):
+                apellido=lista_apellidos.pop(0)
+                diccionario["Apellido"] = apellido
+                diccionario["Nombre"] = nombre
+                print(diccionario)
+
             elegir_subejercicio()
         elif visualizar == 3:
             with open('calificaciones.csv', 'r', encoding="utf-8") as f:
