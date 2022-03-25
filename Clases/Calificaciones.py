@@ -23,10 +23,18 @@ class Calificaciones_estudiantes:
                 apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
                 parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
                 ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
-                diccionario["Apellido"] = apellido ; diccionario["Nombre"] = nombre ; diccionario["Asistencia"] = asistencia
-                diccionario["Parcial1"] = parcial1 ; diccionario["Parcial2"] = parcial2 ; diccionario["Ordinario1"] = ordinario1
-                diccionario["Ordinario2"] = ordinario2 ; diccionario["Practicas"] = practicas ; diccionario["OrdinarioPracticas"] = ordinariopracticas
-                print(diccionario)
+                diccionario[i]={
+                    'Apellido': apellido,
+                    'Nombre': nombre,
+                    'Asistencia': asistencia,
+                    'Parcial 1': parcial1,
+                    'Parcial 2': parcial2,
+                    'Ordinario 1': ordinario1,
+                    'Ordinario 2': ordinario2,
+                    'Practicas': practicas,
+                    'Ordinario Practicas': ordinariopracticas
+                }
+            print(diccionario)
 
             elegir_subejercicio()
         elif visualizar == 3:
