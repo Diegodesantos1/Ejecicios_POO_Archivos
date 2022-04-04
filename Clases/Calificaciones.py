@@ -15,6 +15,7 @@ class Calificaciones_estudiantes:
             elegir_subejercicio()
         elif visualizar == 2:
             diccionario={}
+            lista_diccionario = []
             datos = pd.read_csv("calificaciones.csv", header=0 , sep =";")
             lista_apellidos = list(datos["Apellidos"]) ; lista_nombre = list(datos["Nombre"]) ; lista_asistencia = list(datos["Asistencia"])
             lista_parcial1 = list(datos["Parcial1"]) ; lista_parcial2 = list(datos["Parcial2"]) ; lista_ordinario1 = list(datos["Ordinario1"])
@@ -23,8 +24,9 @@ class Calificaciones_estudiantes:
                 apellido=lista_apellidos.pop(0) ; nombre=lista_nombre.pop(0) ; asistencia = lista_asistencia.pop(0)
                 parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
                 ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
-                diccionario[i]={"Apellido": apellido,"Nombre": nombre,"Asistencia": asistencia,"Parcial 1": parcial1,"Parcial 2": parcial2,"Ordinario 1": ordinario1,"Ordinario 2": ordinario2,"Practicas": practicas,"Ordinario Practicas": ordinariopracticas}
-            print(diccionario)
+                diccionario={"Apellido": apellido,"Nombre": nombre,"Asistencia": asistencia,"Parcial 1": parcial1,"Parcial 2": parcial2,"Ordinario 1": ordinario1,"Ordinario 2": ordinario2,"Practicas": practicas,"Ordinario Practicas": ordinariopracticas}
+                lista_diccionario.append(diccionario)
+            print(lista_diccionario)
             elegir_subejercicio()
         elif visualizar == 3:
             with open("calificaciones.csv", "r", encoding="utf-8") as f:
@@ -38,6 +40,7 @@ class Calificaciones_estudiantes:
             Calificaciones_estudiantes.recibir_datos()
     def nota_final():
         diccionario={}
+        lista_diccionario2 = []
         datos = pd.read_csv("calificaciones.csv", header=0 , sep =";")
         lista_apellidos = list(datos["Apellidos"]) ; lista_nombre = list(datos["Nombre"]) ; lista_asistencia = list(datos["Asistencia"])
         lista_parcial1 = list(datos["Parcial1"]) ; lista_parcial2 = list(datos["Parcial2"]) ; lista_ordinario1 = list(datos["Ordinario1"])
@@ -47,8 +50,9 @@ class Calificaciones_estudiantes:
             parcial1=lista_parcial1.pop(0) ; parcial2=lista_parcial2.pop(0) ; ordinario1 = lista_ordinario1.pop(0)
             ordinario2 = lista_ordinario2.pop(0) ; practicas = lista_practicas.pop(0) ; ordinariopracticas = lista_ordinariopracticas.pop(0)
             nota_final = ((parcial1 * 0.3) + (parcial2 * 0.3)) + (practicas * 0.4) ; nota_final = round(nota_final, 2)
-            diccionario[i]={"Apellido": apellido,"Nombre": nombre,"Asistencia": asistencia,"Parcial 1": parcial1,"Parcial 2": parcial2,"Ordinario 1": ordinario1,"Ordinario 2": ordinario2,"Practicas": practicas,"Ordinario Practicas": ordinariopracticas, "Nota final": nota_final}
-        print(f"\nLos datos añadida la nota final son : \n\n\n{diccionario}")
+            diccionario={"Apellido": apellido,"Nombre": nombre,"Asistencia": asistencia,"Parcial 1": parcial1,"Parcial 2": parcial2,"Ordinario 1": ordinario1,"Ordinario 2": ordinario2,"Practicas": practicas,"Ordinario Practicas": ordinariopracticas, "Nota final": nota_final}
+            lista_diccionario2.append(diccionario)
+        print(f"\nLos datos añadida la nota final son : \n\n\n{lista_diccionario2}")
         elegir_subejercicio()
     def aprobado_suspenso():
         aprobados = [] ; suspensos = []
